@@ -34,6 +34,11 @@ form.addEventListener('submit', e => {
         form.reset()
 })
 
+// db.collection('recipes').get()
+// .then(snapshot => {
+// 	snapshot.docs.forEach(doc => console.log(doc.data()))
+// })
+
 const unSub = db.collection('recipes').onSnapshot(snapshot => {
     console.log(snapshot.docChanges())
     snapshot.docChanges().forEach(change => {
